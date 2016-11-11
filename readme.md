@@ -5,11 +5,11 @@ Create a combined image from multiple images using PHP.
 By cabenitez <cabenitez83@gmail.com>
 
 ### Features
-  - Suport JPEG, PNG, GIF and remote images.
-  - Easy installation.
-  - Display on the screen.
-  - Allows you to save the result to a file.
+  - Suport JPG, JPEG, PNG, GIF and remote images.
   - Create an new PNG image with transparent background.
+  - Easy installation.
+  - Display combined image on the screen.
+  - Allows you to save the result to a file.
 
 ### Requirements
 
@@ -17,7 +17,7 @@ By cabenitez <cabenitez83@gmail.com>
 - GD library
 
 ### Installation
-Download and extract the [latest release](https://github.com/MergeImages).
+Download and extract the [latest release](https://github.com/cabenitez/MergeImages).
 
 ### Usage
 
