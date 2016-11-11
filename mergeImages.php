@@ -36,11 +36,11 @@ class MergeImages
 		$this->files = [];
 		$this->base_image = '';
 		$this->base_path = './';
-		$this->base_filename = 'merged_image.png';
+		$this->base_filename = 'merged_image';
 
 	}
 	
-	public function process($images = [], $show = false, $save = false, $path = null, $filename = null)
+	public function process($images = [], $save = false, $path = null, $filename = null, $output = 'none')
 	{
 		// set Items
 		$this->setItems($images);
@@ -52,10 +52,25 @@ class MergeImages
 		if($save){
 			$this->saveImage($path, $filename);
 		}
+		
+		// output
 
-		// show merged image
-		if($show){
-			$this->showImage();
+		if($output != 'none'){
+			
+			switch ($output) {
+				
+				case 'screen':
+					$this->showImage();
+					break;				
+				
+				case 'base64':
+					return $this->getImage();
+					break;				
+				
+				default:
+					break;
+			}
+			
 		}
 		
 	}
@@ -97,7 +112,7 @@ class MergeImages
 				$this->final_width = ($width > $this->final_width) ? $width : $this->final_width;
 				$this->final_height = $height + $this->final_height;
 
-				// create new image and merge
+				// create new image
 				$this->base_image = imagecreatetruecolor($this->final_width, $this->final_height);
 
 				// Fill the image with transparent color 
@@ -134,7 +149,7 @@ class MergeImages
 	public function saveImage($path = null, $filename = null)
 	{
 		$path 	  = is_null($path) ? $this->base_path : $path;
-		$filename = is_null($filename) ? $this->base_filename : $filename.'.png';
+		$filename = is_null($filename) ? $this->base_filename : $filename;
 		
 		if ($path != '.' && $path != '..') {
 
@@ -142,19 +157,43 @@ class MergeImages
 			    mkdir($path, 0777, true);
 			}
 
-			imagepng($this->base_image, $path .'/'. $filename);
+			imagepng($this->base_image, $path .'/'. $filename . '.png');
 		
 		}else{
 
 			throw new InvalidArgumentException('Incorrect path');
+
 		}			
 	}
 
 	// show image to browser
 	public function showImage()
 	{
-		header("Content-Type: image/png");
-		imagepng($this->base_image);
+		if ($this->base_image) {
+		
+			header("Content-Type: image/png");
+			imagepng($this->base_image);
+		
+		}else{
+
+			throw new InvalidArgumentException('Missing Image');
+		}
+	}
+
+	// return image base64 encoded
+	public function getImage()
+	{
+		if ($this->base_image) {
+			
+			ob_start();
+			imagepng($this->base_image);
+			$png = ob_get_clean();
+			return $uri = "data:image/png;base64," . base64_encode($png);
+	
+		}else{
+
+			throw new InvalidArgumentException('Missing Image');
+		}			
 	}
 
 }

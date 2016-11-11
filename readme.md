@@ -1,15 +1,15 @@
 # MergeImages
 
-Create a combined image from multiple images using PHP.
+Create a new image merged from the images with PHP.
 
 By cabenitez <cabenitez83@gmail.com>
 
 ### Features
-  - Suport JPG, JPEG, PNG, GIF and remote images.
-  - Create an new PNG image with transparent background.
+  - Suport JPEG, PNG, GIF and remote images.
   - Easy installation.
-  - Display combined image on the screen.
+  - Display on the screen.
   - Allows you to save the result to a file.
+  - Create an new PNG image with transparent background.
 
 ### Requirements
 
@@ -17,7 +17,7 @@ By cabenitez <cabenitez83@gmail.com>
 - GD library
 
 ### Installation
-Download and extract the [latest release](https://github.com/cabenitez/MergeImages).
+Download and extract the [latest release](https://github.com/MergeImages).
 
 ### Usage
 
@@ -43,13 +43,13 @@ $mergeimages->process($images);
 <?php
 /*
 @param: $images (Array | Images to be merged).
-@param: $show (Boolean | Indicate whether to display the result on the screen).
 @param: $save (Boolean | Indicate whether to save the result on the screen).
 @param: $path (String | Path to save merged image).
 @param: $filename (String | Filename for merged image).
+@param: $output (String | Indicate whether you want to display the result on the screen, get the base64 code or none, the allowed values are "none", "screen" or "base64").
 @return Image merged.
 */
-$mergeimages->process($images, $show, $save, $path, $filename);
+$mergeimages->process($images, $save, $path, $filename, $output);
 
 /*
 @param: $images (Array | Images to be merged).
@@ -81,6 +81,14 @@ $mergeimages->saveImage($path, $filename);
 @return Merged image.
 */
 $mergeimages->showImage();
+
+/*
+@param: None.
+@return Merged image encoded with MIME base64.
+*/
+$src = $mergeimages->getImage();
+<img src="<?=$src?>" alt="Merged Image">
+
 ```
 ### Todos
 
