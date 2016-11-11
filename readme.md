@@ -13,9 +13,9 @@ By cabenitez <cabenitez83@gmail.com>
 
 ### Graphic explanation
 
-<img src="https://raw.githubusercontent.com/cabenitez/MergeImages/master/img/css.jpg" width="100"/> +
-<img src="http://kraken-php.com/build/img/index/logo-php-adbac78231.png" width="100"/> +
-<img src="https://raw.githubusercontent.com/cabenitez/MergeImages/master/img/html5.png" width="100"/> =>
+<img src="https://raw.githubusercontent.com/cabenitez/MergeImages/master/img/css.jpg" width="100"/> **+**
+<img src="http://kraken-php.com/build/img/index/logo-php-adbac78231.png" width="100"/> **+**
+<img src="https://raw.githubusercontent.com/cabenitez/MergeImages/master/img/html5.png" width="100"/> **=**
 <img src="https://raw.githubusercontent.com/cabenitez/MergeImages/master/img/merged.png" width="200"/>
 
 
