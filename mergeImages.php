@@ -136,7 +136,18 @@ class MergeImages
 		$path 	  = is_null($path) ? $this->base_path : $path;
 		$filename = is_null($filename) ? $this->base_filename : $filename.'.png';
 		
-		imagepng($this->base_image, $path . $filename);
+		if ($path != '.' && $path != '..') {
+
+			if (!is_dir($path)) {
+			    mkdir($path, 0777, true);
+			}
+
+			imagepng($this->base_image, $path .'/'. $filename);
+		
+		}else{
+
+			throw new InvalidArgumentException('Incorrect path');
+		}			
 	}
 
 	// show image to browser
