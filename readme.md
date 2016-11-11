@@ -1,6 +1,6 @@
 # MergeImages
 
-Create a new image merged from the images with PHP.
+Create a combined image from multiple images using PHP.
 
 By cabenitez <cabenitez83@gmail.com>
 
