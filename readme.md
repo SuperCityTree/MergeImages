@@ -11,6 +11,14 @@ By cabenitez <cabenitez83@gmail.com>
   - Allows you to save the result to a file.
   - Create an new PNG image with transparent background.
 
+### Graphic explanation
+
+<img src="https://raw.githubusercontent.com/cabenitez/MergeImages/master/img/css.jpg" style="width: 100px;"/> +
+<img src="http://kraken-php.com/build/img/index/logo-php-adbac78231.png" style="width: 100px;"/> +
+<img src="https://raw.githubusercontent.com/cabenitez/MergeImages/master/img/html5.png" style="width: 100px;"/> =>
+<img src="https://raw.githubusercontent.com/cabenitez/MergeImages/master/img/merged.png" style="width: 200px;"/>
+
+
 ### Requirements
 
 - PHP 5+
