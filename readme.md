@@ -9,6 +9,7 @@ By cabenitez <cabenitez83@gmail.com>
   - Easy installation.
   - Display on the screen.
   - Allows you to save the result to a file.
+  - Get result in base64 encoded for use in <img /> element.
   - Create an new PNG image with transparent background.
 
 ### Graphic explanation
